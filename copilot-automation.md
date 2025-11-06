@@ -666,6 +666,34 @@ jobs:
 
 ---
 
+## Best Practices for Implementation
+
+### When Implementing Jira Tickets
+
+1. **Fetch ticket details** from Jira
+2. **Implement the feature** as described
+3. **Create branch** with ticket ID (e.g., `feature/DEMO-1-description`)
+4. **Commit with proper message** including ticket reference
+5. **Create Pull Request** with detailed description
+6. **Update Jira ticket status** (e.g., To Do → In Progress)
+7. **Add detailed comment to Jira** with:
+   - Features implemented
+   - Changes made (frontend/backend)
+   - PR link
+   - Testing instructions
+   - Status (ready for review)
+
+### Documentation Guidelines
+
+- ❌ **Don't create** separate implementation summary documents
+- ✅ **Do add** detailed comments to Jira tickets
+- ✅ **Do write** clear PR descriptions
+- ✅ **Do provide** concise summaries in chat/comments
+
+This keeps documentation centralized in Jira and GitHub where it's most useful.
+
+---
+
 ## Conclusion
 
 GitHub Copilot is a powerful tool for accelerating development. Use it wisely:
@@ -675,6 +703,7 @@ GitHub Copilot is a powerful tool for accelerating development. Use it wisely:
 3. **Review and test all code**
 4. **Iterate and refine**
 5. **Learn from suggestions**
+6. **Keep documentation in Jira/GitHub**
 
 Happy coding with your AI pair programmer! 🚀
 
