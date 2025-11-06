@@ -68,14 +68,26 @@ const products = [
 
 // Get all products
 router.get('/', (req, res) => {
-  const { category } = req.query;
+  const { category, search } = req.query;
   
+  let filtered = products;
+  
+  // Filter by category
   if (category && category !== 'all') {
-    const filtered = products.filter(p => p.category === category);
-    return res.json(filtered);
+    filtered = filtered.filter(p => p.category === category);
   }
   
-  res.json(products);
+  // Filter by search query
+  if (search) {
+    const query = search.toLowerCase();
+    filtered = filtered.filter(p => 
+      p.name.toLowerCase().includes(query) ||
+      p.description.toLowerCase().includes(query) ||
+      p.category.toLowerCase().includes(query)
+    );
+  }
+  
+  res.json(filtered);
 });
 
 // Get single product
